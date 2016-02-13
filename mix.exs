@@ -30,7 +30,9 @@ defmodule FeedEx.Mixfile do
   # Type `mix help deps` for more examples and options
   defp deps do
     [{:feedparser, github: "vhf/feedparser"},
-     {:httpoison, "~> 0.8.1"}]
+     {:httpoison, "~> 0.8.1"},
+     {:dogma, "~> 0.0", only: :dev},
+     {:credo, "~> 0.3", only: [:dev, :test]}]
   end
 
   defp package do
