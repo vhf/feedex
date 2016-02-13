@@ -1,6 +1,5 @@
 FeedEx
 ========
-[![Build Status](https://travis-ci.org/vhf/feedex.svg?branch=master)](https://travis-ci.org/vhf/feedex)
 
 Simple wrapper for https://github.com/urbanserj/feedparser
 
