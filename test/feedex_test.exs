@@ -15,8 +15,8 @@ defmodule FeedExTest do
     {:ok, feed} = FeedEx.parse(feed)
     assert feed[:feed][:title] == 'Some Awesome Blog'
 
-    {:url, url} = hd (for e <- feed[:feed][:links], e[:rel] == 'hub' do
-        {:url, e[:href]} end)
-    assert url == 'https://example.com/?pushpress=hub'
+    pubsubhubbub = Enum.find(feed[:feed][:links], fn(x) -> x[:rel] == 'hub' end)
+    [sub_url] = Keyword.get_values(pubsubhubbub, :href)
+    assert sub_url == 'https://example.com/?pushpress=hub'
   end
 end
